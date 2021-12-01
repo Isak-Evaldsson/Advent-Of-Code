@@ -35,5 +35,6 @@ int main() {
         if(curr > prev)
             increased++;
     }
-    printf("Task 2 Answer: %d\n", increased);                    
+    printf("Task 2 Answer: %d\n", increased);
+    free(entries);                    
 }

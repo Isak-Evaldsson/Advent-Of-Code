@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -g
+CFLAGS = -g -fsanitize=address
 
 main:
 	$(CC) $(CFLAGS) main.c
-	./a.out < input
+	time ./a.out < input
