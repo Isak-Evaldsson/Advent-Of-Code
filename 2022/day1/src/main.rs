@@ -1,3 +1,8 @@
+/*
+    Advent of Code 2022 - by Isak Evaldssson
+    Day 1: Calorie Counting
+*/
+
 use std::{io, vec};
 
 fn main() {
