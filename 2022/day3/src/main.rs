@@ -21,14 +21,12 @@ fn task1() {
         let divider = str.len() / 2;
         let compartment1 = &str[..divider];
         let compartment2 = &str[divider..];
-        let mut duplicate = ' ';
 
-        for c in compartment1.chars() {
-            if compartment2.contains(c) {
-                duplicate = c;
-                break;
-            }
-        }
+        let duplicate = compartment1
+            .chars()
+            .find(|c| compartment2.contains(*c))
+            .unwrap();
+
         sum += score(duplicate) as u32;
     }
     println!("Task 1: Sum of priorities {}", sum);
@@ -43,14 +41,11 @@ fn task2() {
     }
 
     for i in (0..lines.len()).step_by(3) {
-        let mut badge = ' ';
+        let badge = lines[i]
+            .chars()
+            .find(|c| lines[i + 1].contains(*c) && lines[i + 2].contains(*c))
+            .unwrap();
 
-        for c in lines[i].chars() {
-            if lines[i + 1].contains(c) && lines[i + 2].contains(c) {
-                badge = c;
-                break;
-            }
-        }
         sum += score(badge) as u32;
     }
     println!("Task 2: Sum of badges {}", sum);
