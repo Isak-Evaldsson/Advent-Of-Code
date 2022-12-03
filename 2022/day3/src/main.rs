@@ -34,11 +34,7 @@ fn task1() {
 
 fn task2() {
     let mut sum: u32 = 0;
-    let mut lines: Vec<String> = vec![];
-
-    for line in io::stdin().lines() {
-        lines.push(line.unwrap());
-    }
+    let lines: Vec<String> = io::stdin().lines().map(|x| x.unwrap()).collect();
 
     for i in (0..lines.len()).step_by(3) {
         let badge = lines[i]
