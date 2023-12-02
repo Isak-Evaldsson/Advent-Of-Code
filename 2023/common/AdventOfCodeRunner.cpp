@@ -5,7 +5,7 @@ int AdventOfCodeRunner::run(int argc, char* argv[])
     int task;
 
     if (argc != 3) {
-        std::cerr << "Usage: " << argv[0] << " 'input-file' 'task number'" << std::endl;
+        std::cerr << "Usage: " << argv[0] << "'task number' 'input-file' " << std::endl;
         return 1;
     }
 
@@ -22,6 +22,10 @@ int AdventOfCodeRunner::run(int argc, char* argv[])
         task1();
         return 0;
     case 2:
+        task2();
+        return 0;
+    case 0:
+        task1();
         task2();
         return 0;
     default:
